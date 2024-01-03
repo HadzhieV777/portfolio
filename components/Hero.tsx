@@ -75,12 +75,13 @@ export default function Hero() {
         <a
           href="/CV.pdf"
           download={true}
-          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
+          className="group bg-white px-5 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
         >
-          Download CV{" "}
+          Download CV
           <HiDownload className="opacity-60 group-hover:translate-y-1 translation" />
         </a>
 
+        <div className="flex gap-3 mt-4 sm:mt-0">
         <a
           className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer border-black/10"
           href="https://www.linkedin.com/in/radoslav-hadzhiev-077ba5205/"
@@ -96,6 +97,7 @@ export default function Hero() {
         >
           <FaGithubSquare />
         </a>
+        </div>
       </motion.div>
     </section>
   );

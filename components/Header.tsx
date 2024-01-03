@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
+import { BsFillMoonStarsFill } from "react-icons/bs";
 
 export default function Header() {
   return (
@@ -35,6 +36,15 @@ export default function Header() {
               </Link>
             </motion.li>
           ))}
+          <motion.li
+            className="h-3/4 flex items-center justify-center"
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+          >
+            <button className="flex items-center justify-center px-3 py-3 hover:text-gray-950 transition">
+              <BsFillMoonStarsFill />
+            </button>
+          </motion.li>
         </ul>
       </nav>
     </header>
