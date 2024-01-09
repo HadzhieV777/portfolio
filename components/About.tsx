@@ -1,9 +1,19 @@
+"use client";
+
 import React from "react";
+import SectionHeading from "./section-heading";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <section>
-      <h2>About me</h2>
+    // TODO Edit text
+    <motion.section
+      className="mb-28 max-w-[45rem] text-center leading sm:mb-40"
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.175 }}
+    >
+      <SectionHeading>About Me</SectionHeading>
       <p className="mb-3">
         After graduating with a degree in{" "}
         <span className="font-medium">Accounting</span>, I decided to pursue my
@@ -30,6 +40,6 @@ export default function About() {
         <span className="font-medium">history and philosophy</span>. I'm also
         learning how to play the guitar.
       </p>
-    </section>
+    </motion.section>
   );
 }
