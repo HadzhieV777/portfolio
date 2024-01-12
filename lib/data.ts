@@ -55,6 +55,7 @@ export const experiencesData = [
   },
 ] as const;
 
+// TODO Fix text
 export const projectsData = [
   {
     title: "DjangoEstates",
