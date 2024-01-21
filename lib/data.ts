@@ -7,6 +7,10 @@ import landWare from "@/public/landware.png";
 
 export const links = [
   {
+    name: "Home",
+    hash: "#home",
+  },
+  {
     name: "About",
     hash: "#about",
   },
