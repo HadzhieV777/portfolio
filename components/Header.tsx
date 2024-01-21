@@ -2,14 +2,14 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { links } from "@/lib/data";
+import { links } from "@/common/data";
 import Link from "next/link";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import clsx from "clsx";
 import { useActiveSectionCxt } from "@/context/active-section-ctx";
 
 export default function Header() {
-  const {activeSection, setActiveSection} = useActiveSectionCxt();
+  const {activeSection, setActiveSection, setTimeOfLastClick} = useActiveSectionCxt();
 
   return (
     <header className="z-[999] relative">
@@ -38,7 +38,10 @@ export default function Header() {
                   { "text-gray-950": activeSection === link.name }
                 )}
                 href={link.hash}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setActiveSection(link.name)
+                  setTimeOfLastClick(Date.now())
+                }}
               >
                 {link.name}
                 {link.name === activeSection && (
