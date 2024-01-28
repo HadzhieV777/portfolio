@@ -15,17 +15,26 @@ export default function Experience() {
   const { ref } = useSectionInView("Experience");
 
   return (
-    <section
-      id="experience"
-      ref={ref}
-    //   className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
-    >
+    <section id="experience" ref={ref} className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>My Experience</SectionHeading>
 
-      <VerticalTimeline>
+      <VerticalTimeline lineColor="">
         {experiencesData.map((item, index) => (
           <React.Fragment key={index}>
-            <VerticalTimelineElement>
+            <VerticalTimelineElement
+              contentStyle={{
+                background: "#f3f4f6",
+                boxShadow: "none",
+                border: "1px solid rgba(0, 0, 0, 0.25)",
+                textAlign: "left",
+                padding: "1.3rem 2rem",
+              }}
+              contentArrowStyle={{
+                borderRight: "0.4rem solid #9ca3af",
+              }}
+              date={item.date}
+              icon={item.icon}
+            >
                 <h3>{item.title}</h3>
                 <p>{item.location}</p>
                 <p>{item.description}</p>
