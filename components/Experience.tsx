@@ -22,6 +22,7 @@ export default function Experience() {
         {experiencesData.map((item, index) => (
           <React.Fragment key={index}>
             <VerticalTimelineElement
+              visible={true}
               contentStyle={{
                 background: "#f3f4f6",
                 boxShadow: "none",
@@ -35,9 +36,9 @@ export default function Experience() {
               date={item.date}
               icon={item.icon}
             >
-                <h3>{item.title}</h3>
-                <p>{item.location}</p>
-                <p>{item.description}</p>
+              <h3>{item.title}</h3>
+              <p>{item.location}</p>
+              <p>{item.description}</p>
             </VerticalTimelineElement>
           </React.Fragment>
         ))}
