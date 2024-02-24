@@ -1,6 +1,7 @@
 "use client";
 
 import { useSectionInView } from "@/common/hooks";
+import { useActiveSectionCxt } from "@/context/active-section-ctx";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,6 +12,7 @@ import { HiDownload } from "react-icons/hi";
 
 export default function Hero() {
   const { ref } = useSectionInView("Home", 0.5);
+  const { setActiveSection, setTimeOfLastClick } = useActiveSectionCxt();
 
   return (
     <section
@@ -74,6 +76,10 @@ export default function Hero() {
         <Link
           href="#contact"
           className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
+          onClick={() => {
+            setActiveSection("Contact");
+            setTimeOfLastClick(Date.now());
+          }}
         >
           Contact me{" "}
           <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />
@@ -82,7 +88,7 @@ export default function Hero() {
         <a
           href="/CV.pdf"
           download={true}
-          className="group bg-white px-5 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-black/10"
+          className="group bg-white px-5 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack"
         >
           Download CV
           <HiDownload className="opacity-60 group-hover:translate-y-1 translation" />
